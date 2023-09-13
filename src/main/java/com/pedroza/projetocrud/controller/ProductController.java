@@ -20,7 +20,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public ResponseEntity<List<ProductModel>> listAll() {
+    public ResponseEntity<List<ProductModel>> listAll() { // já implementado
         return productService.listAll();
     }
 
