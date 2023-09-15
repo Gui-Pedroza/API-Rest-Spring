@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <link rel="stylesheet" href="../static/styles/style.css">
 </head>
+
 <body>
     <h1>Cadastro de produtos</h1>
+    <h3>Criar novo</h3>    
+        <fieldset>
+            <legend>Cadastrar producto</legend>
+            <label for="nome">Nome do Produto</label>
+            <input type="text" name="nomeProduto" id="nome"><br>
+            <label for="valor">Valor:</label>
+            <input type="number" name="valorProduto" id="valor"><br>
+            <button onclick="criarProduto()">Salvar</button><br>
+            <div id="produto-criado"></div>
+        </fieldset>    
+    <h3>Listar todos produtos</h3>
     <button type="button" onclick="listar()">Listar</button>
     <ul id="lista"></ul>
     <script src="../static/js/scripts.js"></script>
 </body>
+
 </html>
