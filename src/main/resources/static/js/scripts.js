@@ -32,8 +32,7 @@ function criarProduto() {
         }
         return response.json(); 
       })
-      .then(data => {
-        TODO: // mostrar na página o produto que foi criado mas to com sono e preguiça
+      .then(data => {        
         document.querySelector('div#produto-criado').innerHTML = `Produto salvo: ${data.name} valor: ${data.value}`
         console.log('Produto criado:', data);
       })
