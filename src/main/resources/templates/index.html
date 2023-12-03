@@ -11,8 +11,8 @@
 <body>
     <h1>Cadastro de produtos</h1>
     <h3>Criar novo</h3>    
-        <fieldset>
-            <legend>Cadastrar producto</legend>
+    <fieldset>
+            <legend>Cadastrar produto</legend>
             <label for="nome">Nome do Produto</label>
             <input type="text" name="nomeProduto" id="nome"><br>
             <label for="valor">Valor:</label>
@@ -20,9 +20,25 @@
             <button onclick="criarProduto()">Salvar</button><br>
             <div id="produto-criado"></div>
         </fieldset>    
-    <h3>Listar todos produtos</h3>
-    <button type="button" onclick="listar()">Listar</button>
-    <ul id="lista"></ul>
+        <h3>Listar todos produtos</h3>
+    <fieldset>
+        <legend>Listar</legend>
+        <button type="button" onclick="listar()">Listar</button>
+        <button type="button" onclick="clearList()">Limpar</button>
+        <ul id="lista"></ul>
+    </fieldset>
+    <h3>Encontrar produto</h3>
+    <fieldset>
+        <legend>Pesquisar produto</legend>
+        <label for="id-pesquisa">Pesquisa por ID</label>
+        <input type="text" name="id-pesquisa" id="id-pesquisa">
+        <button onclick="pesquisaPorId()">Buscar</button><br>
+        <label for="nome-pesquisa">Pesquisa por nome</label>
+        <input type="text" name="nome-pesquisa" id="nome-pesquisa">
+        <button onclick="pesquisaPorNome()">Buscar</button>
+    </fieldset>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../static/js/scripts.js"></script>
 </body>
 

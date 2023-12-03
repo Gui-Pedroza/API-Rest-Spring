@@ -31,6 +31,7 @@ public class ProductService {
                 product.add(linkTo(methodOn(ProductController.class).findById(id)).withSelfRel());
             }
         }
+        System.out.println(list);
         return ResponseEntity.status(HttpStatus.OK).body(list);
     }
 
@@ -41,6 +42,18 @@ public class ProductService {
         }
         product0.get().add(linkTo(methodOn(ProductController.class).listAll()).withSelfRel());
         return ResponseEntity.ok().body(product0.get());
+    }
+
+    public ResponseEntity<ProductModel> findByName(String name) {
+        List<ProductModel> list = productRepository.findAll();
+        if (!list.isEmpty()) {
+            for (ProductModel product : list) {
+                if (product.getName().contains(name)) {
+                    return ResponseEntity.ok().body(product);
+                }
+            }
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
     public ResponseEntity<ProductModel> save(ProductRecordDTO product) {

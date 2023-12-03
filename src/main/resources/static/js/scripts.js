@@ -1,10 +1,10 @@
 const API_URL = 'http://localhost:8090/api-product/products'
+const mostraLista = document.querySelector('ul#lista')
 function listar() {
-    const mostraLista = document.querySelector('ul#lista')
     fetch(API_URL)
         .then(response => response.json())
         .then(itens => {
-            mostraLista.innerHTML = ''
+          clearList()
             for (item of itens) {
                 const itemLista = document.createElement('li')
                 itemLista.innerHTML = `Nome produto: ${item.name}<br> Preço: ${item.value}`
@@ -41,3 +41,17 @@ function criarProduto() {
       });
     
 }
+
+function pesquisaPorId() {
+  const id = document.querySelector('input#id-pesquisa').value
+  axios(API_URL + '/'+ id)
+  .then(response => response.data)
+  .then(data => console.log(data))
+  .catch('Deu merda: ')
+}
+
+function clearList() {
+  mostraLista.innerHTML = ''  
+}
+
+// fazer uma função separada que exibe o item como lista

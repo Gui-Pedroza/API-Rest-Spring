@@ -20,7 +20,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public ResponseEntity<List<ProductModel>> listAll() { // já implementado
+    public ResponseEntity<List<ProductModel>> listAll() { // implementado
         return productService.listAll();
     }
 
@@ -29,8 +29,13 @@ public class ProductController {
         return productService.findById(id);
     }
 
+    @GetMapping("/products/{name}")
+    public ResponseEntity<ProductModel> findByName(@PathVariable(value = "name") String name) {
+        return productService.findByName(name);
+    }
+
     @PostMapping("/products")
-    public ResponseEntity<ProductModel> saveProduct(@RequestBody @Valid ProductRecordDTO productDTO) { // a implementar
+    public ResponseEntity<ProductModel> saveProduct(@RequestBody @Valid ProductRecordDTO productDTO) { // implementado
         return productService.save(productDTO);
     }
 
