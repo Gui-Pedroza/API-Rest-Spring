@@ -24,8 +24,8 @@
     <fieldset>
         <legend>Listar</legend>
         <button type="button" onclick="listar()">Listar</button>
-        <button type="button" onclick="clearList()">Limpar</button>
-        <ul id="lista"></ul>
+        <button type="button" onclick="clearList(document.getElementById('lista-todos'))">Limpar</button>
+        <ul id="lista-todos"></ul>
     </fieldset>
     <h3>Encontrar produto</h3>
     <fieldset>
@@ -36,6 +36,7 @@
         <label for="nome-pesquisa">Pesquisa por nome</label>
         <input type="text" name="nome-pesquisa" id="nome-pesquisa">
         <button onclick="pesquisaPorNome()">Buscar</button>
+        <div id="resultado-id"></div>
     </fieldset>
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
