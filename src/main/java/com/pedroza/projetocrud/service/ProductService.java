@@ -48,7 +48,7 @@ public class ProductService {
         List<ProductModel> list = productRepository.findAll();
         if (!list.isEmpty()) {
             for (ProductModel product : list) {
-                if (product.getName().contains(name)) {
+                if (product.getName().toLowerCase().contains(name.toLowerCase())) { // TODO: refinar essa busca
                     return ResponseEntity.ok().body(product);
                 }
             }

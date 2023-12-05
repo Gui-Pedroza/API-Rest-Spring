@@ -25,12 +25,12 @@ public class ProductController {
     }
 
     @GetMapping("/products/id/{id}")
-    public ResponseEntity<Object> findById(@PathVariable(value = "id") @NotNull UUID id) {
+    public ResponseEntity<Object> findById(@PathVariable(value = "id") @NotNull UUID id) { // implementado
         return productService.findById(id);
     }
 
     @GetMapping("/products/name/{name}")
-    public ResponseEntity<ProductModel> findByName(@PathVariable(value = "name") String name) {
+    public ResponseEntity<ProductModel> findByName(@PathVariable(value = "name") String name) { // implementado
         return productService.findByName(name);
     }
 
